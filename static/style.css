@@ -1,0 +1,171 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #0f172a, #1e293b, #312e81);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+}
+
+.container {
+    width: min(900px, 100%);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 22px;
+}
+
+.icon {
+    font-size: 48px;
+}
+
+h1 {
+    font-size: clamp(30px, 6vw, 48px);
+    margin: 8px 0;
+}
+
+header p {
+    color: #cbd5e1;
+}
+
+.card {
+    background: rgba(15, 23, 42, .9);
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 24px;
+    padding: 30px;
+    box-shadow: 0 25px 60px rgba(0,0,0,.35);
+}
+
+.timer {
+    text-align: center;
+    font-size: clamp(70px, 14vw, 120px);
+    font-weight: bold;
+    letter-spacing: 4px;
+}
+
+.status {
+    text-align: center;
+    color: #94a3b8;
+    min-height: 24px;
+    margin: 8px 0 25px;
+}
+
+.progress-bar {
+    height: 14px;
+    background: #334155;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+#progress {
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg,#38bdf8,#818cf8);
+    transition: width .3s;
+}
+
+.progress-text {
+    text-align: center;
+    color: #cbd5e1;
+    margin: 8px 0 20px;
+}
+
+.presets,
+.controls,
+.custom {
+    display: grid;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.presets {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.controls {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.custom {
+    grid-template-columns: 1fr 1fr auto;
+}
+
+button,
+input {
+    border: 0;
+    border-radius: 12px;
+    padding: 13px;
+    font-size: 15px;
+}
+
+button {
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: .88;
+}
+
+.preset { background: #334155; }
+.preset.active { background: #4f46e5; }
+.set { background: #0ea5e9; }
+.start { background: #22c55e; }
+.pause { background: #f59e0b; }
+.reset { background: #ef4444; }
+.clear { background: #64748b; }
+
+input {
+    background: #0f172a;
+    color: white;
+    border: 1px solid #475569;
+    outline: none;
+}
+
+.info {
+    margin-top: 25px;
+    padding: 16px;
+    border-radius: 14px;
+    background: rgba(255,255,255,.05);
+    color: #cbd5e1;
+    line-height: 1.6;
+}
+
+.info strong {
+    display: block;
+    color: #93c5fd;
+    margin-bottom: 5px;
+}
+
+code {
+    color: #fff;
+}
+
+footer {
+    text-align: center;
+    color: #94a3b8;
+    font-size: 13px;
+    margin-top: 18px;
+}
+
+@media (max-width: 650px) {
+    .card {
+        padding: 20px;
+    }
+
+    .presets,
+    .controls,
+    .custom {
+        grid-template-columns: 1fr;
+    }
+}
